@@ -10,4 +10,4 @@ app.get("/", (req, res) => {
 
 app.use("/test-route", testRoute);
 
-app.app.listen(8080, () => console.log(`Server running on port ${port} !`));
+app.listen(8080, () => console.log(`Server running on port ${port} !`));
