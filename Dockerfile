@@ -1,5 +1,8 @@
 FROM node:16-alpine as builder
 
+ARG PNPM_VERSION=7.12.2
+RUN npm install -g pnpm@${PNPM_VERSION}
+
 WORKDIR /EMERGENCY_BE
 
 COPY . ./
