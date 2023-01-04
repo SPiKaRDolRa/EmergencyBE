@@ -8,10 +8,6 @@ const getTfprMarks = require("./routes/get_tfpr_mark");
 const app = express();
 const port = 8080;
 
-app.get("/", (req, res) => {
-  res.send("Hello World! From GCP");
-});
-
 app.use("/get-emgr-marks", getEmgrMarks);
 app.use("/get-tfpr-marks", getTfprMarks);
 app.use("/create-emergency-report", createEmergencyReport);

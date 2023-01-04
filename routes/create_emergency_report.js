@@ -7,8 +7,8 @@ router.use(bodyParser.json());
 
 router.post("/", (req, res) => {
   const bodyReport = req.body;
-  let insertEmergencyReport = `INSERT INTO emergency_report (victim_vehicle, has_parties, party_vehicle, accident_info, lnt, lng, img)
-                               VALUES('${bodyReport.victimVechicle}', ${bodyReport.hasParties}, '${bodyReport.partyVehicle}', '${bodyReport.accidentInfo}', ${bodyReport.lnt}, ${bodyReport.lng}, '${bodyReport.img}')`;
+  let insertEmergencyReport = `INSERT INTO emergency_report (victim_vehicle, has_parties, party_vehicle, accident_info, lnt, lng, img, create_at)
+                               VALUES('${bodyReport.victimVechicle}', ${bodyReport.hasParties}, '${bodyReport.partyVehicle}', '${bodyReport.accidentInfo}', ${bodyReport.lnt}, ${bodyReport.lng}, '${bodyReport.img}', '${bodyReport.createAt}')`;
 
   db.query(insertEmergencyReport, (err, result) => {
     if (err) {
