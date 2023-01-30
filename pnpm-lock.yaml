@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   body-parser: ^1.20.1
+  dayjs: ^1.11.7
   excel4node: ^1.8.0
   express: ^4.18.2
   mime: ^3.0.0
@@ -10,6 +11,7 @@ specifiers:
 
 dependencies:
   body-parser: 1.20.1
+  dayjs: 1.11.7
   excel4node: 1.8.0
   express: 4.18.2
   mime: 3.0.0
@@ -144,6 +146,10 @@ packages:
 
   /core-util-is/1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+    dev: false
+
+  /dayjs/1.11.7:
+    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
     dev: false
 
   /debug/2.6.9:
