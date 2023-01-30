@@ -11,6 +11,10 @@ const createExcel = () => {
   const ws = wb.addWorksheet("ข้อมูลปัญหาบนท้องถนน");
   let queryAllMarks = "SELECT * FROM traffic_problem_report";
 
+  function correctTimezoneIssue(jsDate) {
+    return new Date(jsDate.getTime() + jsDate.getTimezoneOffset() * -1 * 60000);
+  }
+
   db.query(queryAllMarks, (err, result) => {
     if (err) {
       console.log(err.stack);
@@ -49,9 +53,11 @@ const createExcel = () => {
 
         ws.cell(rowIndex, 6).number(item["lng"]);
 
-        ws.cell(rowIndex, 7).date(item["create_at"]).style({
-          numberFormat: "yyyy-mm-dd hh:mm:ss",
-        });
+        ws.cell(rowIndex, 7)
+          .date(correctTimezoneIssue(new Date(item["create_at"])))
+          .style({
+            numberFormat: "yyyy-mm-dd hh:mm:ss",
+          });
       });
       rowIndex++;
     });
